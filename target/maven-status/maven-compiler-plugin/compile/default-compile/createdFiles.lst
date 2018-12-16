@@ -1,0 +1,6 @@
+com/music/app/services/MusicRetriever.class
+com/music/app/config/CassandraConfig.class
+com/music/app/MusicApplication.class
+com/music/app/controller/MusicController.class
+com/music/app/model/MusicMetadata.class
+com/music/app/MockDao/MockRepository.class

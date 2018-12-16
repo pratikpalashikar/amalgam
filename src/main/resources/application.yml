@@ -1,0 +1,5 @@
+spring:
+  data:
+    keyspace: music_metadata
+    port:
+    ip:
