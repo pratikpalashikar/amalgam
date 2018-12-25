@@ -1,6 +1,7 @@
 package com.music.app.model;
 
 
+import org.springframework.data.cassandra.core.mapping.Table;
 
 public class MusicMetadata {
 

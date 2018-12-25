@@ -1,9 +1,12 @@
 package com.music.app.controller;
 
-import com.music.app.model.MusicMetadata;
+import com.music.app.model.MetaDataTable;
+import com.music.app.model.MetaDataTableID;
 import com.music.app.services.MusicRetriever;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,10 +20,17 @@ public class MusicController {
     private MusicRetriever musicRetriever;
 
     @RequestMapping("/getSongList")
-    public List<MusicMetadata> getSongList(){
+    public List<MetaDataTableID> getSongList(){
 
         return musicRetriever.getSongsList();
 
+    }
+
+
+
+    @RequestMapping(value = "/uploadsong", method = RequestMethod.POST )
+    public MetaDataTableID uploadSong(@RequestBody MetaDataTable metaDataTable){
+        return musicRetriever.uploadSong(metaDataTable);
     }
 
 

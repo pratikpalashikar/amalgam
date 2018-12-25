@@ -1,5 +1,5 @@
 spring:
   data:
     keyspace: music_metadata
-    port:
-    ip:
+    port: 9042
+    ip: 127.0.0.1
