@@ -8,6 +8,7 @@ import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
 import org.springframework.data.cassandra.config.CassandraClusterFactoryBean;
 import org.springframework.data.cassandra.core.mapping.BasicCassandraMappingContext;
 import org.springframework.data.cassandra.core.mapping.CassandraMappingContext;
+import org.springframework.data.cassandra.core.mapping.SimpleUserTypeResolver;
 
 
 @Configuration
@@ -44,12 +45,13 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
     }
 
 
+
     @Bean
-    public CassandraMappingContext cassandraMapping() {
-        return new BasicCassandraMappingContext();
+    public CassandraMappingContext mappingContext() {
+        BasicCassandraMappingContext mappingContext = new BasicCassandraMappingContext();
+        mappingContext.setUserTypeResolver(new SimpleUserTypeResolver(cluster().getObject(), getKeyspaceName()));
+        return mappingContext;
     }
-
-
 
 
 
