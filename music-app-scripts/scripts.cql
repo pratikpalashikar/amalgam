@@ -28,4 +28,4 @@ INSERT INTO music_metadata.metadata (song_name, genre, album_name, artist_name, 
 
 
 
-INSERT INTO music_metadata.songs (id, data, metadata) VALUES ('764e5dba-9333-402a-bd74-83d3a53f7c8e',null,{song_name: 'dil dooba', genre: 'khakhee',album_name: 'akshay Kumar',artist_name: 'pratik',writer: 'gayatri',publisher: 't-series'});
+INSERT INTO music_metadata.songs (id, data, metadata) VALUES (764e5dba-9333-402a-bd74-83d3a53f7c8e,null,{song_name: 'dil dooba', genre: 'khakhee',album_name: 'akshay Kumar',artist_name: 'pratik',writer: 'gayatri',publisher: 't-series'});

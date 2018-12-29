@@ -35,6 +35,11 @@ public class MetaDataTable {
     private String publisher;
 
 
+
+    public MetaDataTable(){
+
+    }
+
     public MetaDataTable(String song_name, String genre, String album_name, String artist_name, String writer, String publisher) {
         this.song_name = song_name;
         this.genre = genre;
@@ -91,4 +96,5 @@ public class MetaDataTable {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
 }

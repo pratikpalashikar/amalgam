@@ -6,6 +6,7 @@ import com.music.app.repository.MusicMetadataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,9 +25,9 @@ public class MusicRetriever {
     }
 
 
-    public MetaDataTableID uploadSong(MetaDataTable metaDataTable) {
+    public MetaDataTableID uploadSong(MetaDataTable metaDataTable, MetaDataTableID metaDataTableData) {
         MetaDataTableID metaDataTableID = new MetaDataTableID();
-        metaDataTableID.setData(null);
+        metaDataTableID.setData(metaDataTableData.getData());
         metaDataTableID.setId(UUID.randomUUID());
         metaDataTableID.setMetadata(metaDataTable);
         return musicMetadataRepository.save(metaDataTableID);

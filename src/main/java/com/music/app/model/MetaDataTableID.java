@@ -7,6 +7,7 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.nio.ByteBuffer;
 import java.util.UUID;
 
 @Table("songs")
@@ -17,8 +18,9 @@ public class MetaDataTableID {
     @PrimaryKeyColumn(ordinal = 0,type = PrimaryKeyType.PARTITIONED)
     private UUID id;
 
+    @CassandraType(type = DataType.Name.BLOB, typeArguments = DataType.Name.BLOB)
     @Column
-    private byte[] data;
+    private ByteBuffer data;
 
     @CassandraType(type = DataType.Name.UDT, userTypeName = "metadata")
     @Column
@@ -36,14 +38,14 @@ public class MetaDataTableID {
         this.id = id;
     }
 
-    public byte[] getData() {
+
+    public ByteBuffer getData() {
         return data;
     }
 
-    public void setData(byte[] data) {
+    public void setData(ByteBuffer data) {
         this.data = data;
     }
-
 
     public MetaDataTable getMetadata() {
         return metadata;
