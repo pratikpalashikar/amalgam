@@ -19,7 +19,7 @@ public class MusicController {
     @Autowired
     private MusicRetriever musicRetriever;
 
-    @RequestMapping("/getSongList")
+    @RequestMapping("/getsongslist")
     public List<MetaDataTableID> getSongList(){
 
         return musicRetriever.getSongsList();
